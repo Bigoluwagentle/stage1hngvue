@@ -3,8 +3,8 @@
         <header>
             <h2>Ticketly</h2>
             <nav>
-                <button>Login</button>
-                <button>Get Started</button>
+                <button @click="router.push('/Login')">Login</button>
+                <button @click="router.push('/Signup')">Get Started</button>
             </nav>
         </header>
         <main>
@@ -12,8 +12,8 @@
                 <h1>Manage Your Ticket with Ease</h1>
                 <p>Track, update, and resolve issues faster.</p>
                 <nav>
-                    <button onClick={create}>Get Started</button>
-                    <button onClick={create}>Login Now</button>
+                    <button @click="router.push('/Signup')">Get Started</button>
+                    <button @click="router.push('/Login')">Login Now</button>
                 </nav>
             </div>
             <img :src="hero" alt="Hero" />
@@ -72,6 +72,8 @@
     import { ref, onMounted } from 'vue'
     import hero from '@/assets/hero.png'
     import Image from '@/assets/image.jpg'
+    import { useRouter } from "vue-router";
+    const router = useRouter();
 </script>
 
 <style scoped>
